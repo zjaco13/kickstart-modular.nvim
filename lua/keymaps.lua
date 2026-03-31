@@ -45,4 +45,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+local projectfile = vim.fn.getcwd() .. 'project.godot'
+local pipe = '/tmp/godot.pipe'
+if projectfile then
+  vim.fn.serverstart(pipe)
+end
 -- vim: ts=2 sts=2 sw=2 et
